@@ -1,0 +1,17 @@
+class CreateReviews < ActiveRecord::Migration
+  def change
+    create_table :reviews do |t|
+      t.string :artist
+      t.string :venue
+      t.string :date
+      t.string :comments
+      t.string :genre	
+
+    #maybe add this, in separate file called create_artists (made when model is made)
+    #create_table :artists do |t|
+      #t.string :artist
+
+      t.timestamps
+    end
+  end
+end

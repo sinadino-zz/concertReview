@@ -1,0 +1,253 @@
+<html>
+
+<body>
+
+
+
+<div class="container">
+
+
+
+	<div style="background: #999; border: grey"class="panel panel-default">
+       <div class="panel-body">
+          <h2   align="center" style="font-size: 40px; color: white; margin-top: -4px; margin-bottom: -4px; font-family: 'Oswald', sans-serif">  Concerts </h2>
+       </div>
+    </div>
+
+
+	<div class="row">
+
+
+		<div class="col-md-4">
+
+			<div style=" border: 3px solid #FAF4F4;background: lightgrey; height: 500px" class="jumbotron">
+			 
+		           <h2  style="color: grey;font-size: 30px; font-family: 'Oswald', sans-serif">  What do you say? </h2>
+
+
+					<div style="border: 3px solid #FAF4F4"class="list-group">
+					  
+					  <a  style="font-size: 18px; font-family: 'Oswald', sans-serif"href="#" class="list-group-item">Check out Artists</a>
+					  <a style="font-size: 18px; font-family: 'Oswald', sans-serif"href="#" class="list-group-item">Write your Review!</a>
+					  <a style="font-size: 18px; font-family: 'Oswald', sans-serif"href="#" class="list-group-item">Follow Your Band!</a>
+					  <a style="font-size: 18px; font-family: 'Oswald', sans-serif"href="#" class="list-group-item">Upcoming Concerts</a>
+					</div>
+		          
+		    </div>
+		</div>
+
+
+		<div class="col-md-8">
+
+			<div style="border: 3px solid #FAF4F4;background: grey; height: 500px" class="jumbotron">
+
+               <h2  style="color: white;font-size: 30px; font-family: 'Oswald', sans-serif">  Recent Concerts </h2>
+
+			  <table style="border: 3px solid #FAF4F4"class = "table">
+			
+			<tr>
+				<th><%= sortable "artist", "Artist" %></th>
+				<th><%= sortable "venue", "Venue" %></th>
+				<th><%= sortable "date", "Date" %></th>
+				<th><%= sortable "numReviews", "Reviews" %></th>
+				<th><%= sortable "avgRating", "Average Overall Rating" %></th>
+				<th>All Reviews & Ratings</th>
+			</tr>
+
+			<% @concerts.each do |concert| %>
+
+			<tr>
+				<td><%= link_to "#{concert.artist.name}", concert.artist %></td>
+				<td><%= "#{concert.venue}" %></td>
+				<td><%= "#{concert.date}" %></td>
+				<td><%= "#{concert.reviews.size}" %></td>
+				<td><%= "#{concert.averageOverall}" %></td>
+				<td><%= link_to "Read More", concert %></td>
+			</tr>
+
+			<% end %>
+
+			</table>
+
+			    </div>
+			</div>
+
+	   </div>
+
+
+
+			   <div style="background: #999; border: grey"class="panel panel-default">
+		       <div class="panel-body">
+		          <h2   align="center" style="font-size: 40px; color: white; margin-top: -4px; margin-bottom: -4px; font-family: 'Oswald', sans-serif">  Trending </h2>
+		       </div>
+		     </div>
+
+
+
+				<div class="row">
+				  <div class="col-sm-6 col-md-4">
+				    <div class="thumbnail">
+				      <img src="http://placehold.it/300x200" alt="...">
+				      <div class="caption">
+				       <h1>Rock in Rion</h1>                       
+        				       
+				      </div>
+				    </div>
+				  </div>
+
+
+				  <div class="col-sm-6 col-md-4">
+				    <div class="thumbnail">
+				      <img src="http://placehold.it/300x200" alt="...">
+				      <div class="caption">
+				        <h1>OutsideLands</h1>                        
+				       
+				      </div>
+				    </div>
+				  </div>
+
+				  <div class="col-sm-6 col-md-4">
+				    <div class="thumbnail">
+				      <img src="http://placehold.it/300x200" alt="...">
+				      <div class="caption">
+				        <h1>Coachella</h1>                        
+				        
+				      </div>
+				    </div>
+				  </div>
+
+				  <div class="col-sm-6 col-md-4">
+				    <div class="thumbnail">
+				      <img src="http://placehold.it/300x200" alt="...">
+				      <div class="caption">
+				        <h1>REggaeontheRiver</h1>                        
+				        
+				      </div>
+				    </div>
+				  </div>
+
+				  <div class="col-sm-6 col-md-4">
+				    <div class="thumbnail">
+				      <img src="http://placehold.it/300x200" alt="...">
+				      <div class="caption">
+				        <h1>Street Scene</h1>                        
+				        
+				      </div>
+				    </div>
+				  </div>
+
+				  <div class="col-sm-6 col-md-4">
+				    <div class="thumbnail">
+				      <img src="http://placehold.it/300x200" alt="...">
+				      <div class="caption">
+				        <h1>Not so silent</h1>
+                        
+				        
+				      </div>
+				    </div>
+				  </div>
+
+
+
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<div class="row">
+
+
+							
+					<div class = "table-responsive">
+
+						
+
+					</div>
+
+
+			    </div>
+
+
+
+
+		</div>
+	</div>
+
+
+</body>
+</html>
+
+
+
+
+<!-- 
+<div id = 'concerts' >
+<% @concerts.each do |concert| %>
+  <p><b><%= link_to "#{concert.artist.name} live at #{concert.venue} on #{concert.date}", concert %><%= " : #{concert.reviews.size} reviews" %></b></p>
+<% end %>
+
+
+<%= paginate @concerts %>
+
+
+
+				<th>All Reviews & Ratings</th>
+			</tr>
+
+			  <% @concerts.each do |concert| %>
+
+			<tr>
+				<td><%= link_to "#{concert.artist.name}", concert.artist %></td>
+				<td><%= "#{concert.venue}" %></td>
+				<td><%= "#{concert.date}" %></td>
+				<td><%= "#{concert.reviews.size}" %></td>
+				<td><%= "#{concert.averageOverall}" %></td>
+				<td><%= link_to "Read More", concert %></td>
+			</tr>
+
+			<% end %>
+
+</div>
+
+
+
+<table class = "table">
+			
+			<tr>
+				<th><%= sortable "artist", "Artist" %></th>
+				<th><%= sortable "venue", "Venue" %></th>
+				<th><%= sortable "date", "Date" %></th>
+				<th><%= sortable "numReviews", "Reviews" %></th>
+				<th><%= sortable "avgRating", "Average Overall Rating" %></th>
+				<th>All Reviews & Ratings</th>
+			</tr>
+
+			<% @concerts.each do |concert| %>
+
+			<tr>
+				<td><%= link_to "#{concert.artist.name}", concert.artist %></td>
+				<td><%= "#{concert.venue}" %></td>
+				<td><%= "#{concert.date}" %></td>
+				<td><%= "#{concert.reviews.size}" %></td>
+				<td><%= "#{concert.averageOverall}" %></td>
+				<td><%= link_to "Read More", concert %></td>
+			</tr>
+
+			<% end %>
+
+			</table>
+
+-->
+
+

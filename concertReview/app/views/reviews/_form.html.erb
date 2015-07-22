@@ -1,0 +1,61 @@
+<%= javascript_include_tag 'jquery.raty' %>
+<%= stylesheet_link_tag "custom", media: "all" %>
+
+<%= form_for(@review) do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+      <% @review.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<!--
+<div id="stars"></div>
+-->
+
+  <div class="form-control:focus">
+    <%= f.label :artist %>
+    <%= f.text_field :artist %>
+  </div>
+  <div class="field">
+    <%= f.label :venue %>
+    <%= f.text_field :venue %>
+  </div>
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.date_select(:date, :start_year => 1990) %>
+  </div>
+  <div class="field">
+    <%= f.label :genre %>
+    <%= f.select :genre, [['Rock','Rock'],['Pop','Pop'],['Electronic','Electronic'],['Country','Country'],['Hip Hop','Hip Hop'],['Folk','Folk'],['Jazz','Jazz'], ['Other', 'Other']] %>
+  </div>
+  <div class="field">
+    <%= f.label :sound %>
+    <%= f.select :sound, (1..5) %>
+  </div>
+  <div class="field">
+    <%= f.label "Stage Presence" %>
+    <%= f.select :stagePresence, (1..5) %>
+  </div>
+  <div id="field">
+    <%= f.label "Song Selection" %>
+    <%= f.select :songSelection, (1..5) %>
+  </div>
+  <div class="field">
+    <%= f.label "Overall Experience" %>
+    <%= f.select :overallRating, (1..5) %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br>
+    <%= f.text_area :comments, :size => "50x10"%>
+  </div>
+ 
+         <%= f.submit %></button>
+  
+<% end %>

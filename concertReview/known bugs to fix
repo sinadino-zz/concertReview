@@ -1,0 +1,5 @@
+FIXED -review controller: make it so artist and concert are created after review and then review is assigned the concert ID because as of now the form will give activerecord error if fields are left blank,
+ 
+FIXED -submitting a blank review with no venue still creates an artist object but should not 
+
+-make it so users can't navigate to login page if they're already logged in, redirect to home?

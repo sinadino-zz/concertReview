@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+
+  <head>
+    <title><%= ConcertReview %></title>
+
+    <link href='http://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="app/assets/images/concert_review.ico">
+
+     <%= stylesheet_link_tag "custom", media: "all" %>       
+     <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/jumbotron/jumbotron.css" rel="stylesheet">
+    <!-- CDN  jquery min  plugins -->
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <!-- CDN bootstrao min plugins -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+
+    <%= stylesheet_link_tag "custom", media: "all" %>
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+  </head>
+
+
+  <body>
+
+
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://getbootstrap.com/examples/jumbotron/#">ConcertReview</a>
+        </div>
+
+
+
+
+        <ul class="nav navbar-nav navbar-right">
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <% if current_user %>
+              <li><%= link_to 'Log Out', log_out_path %></li>
+            <% else %>
+            <li><%= link_to 'Log In', log_in_path %></li>
+            <li><%= link_to 'Sign Up', sign_up_path %></li>     
+            <% end %>
+        </ul>
+
+        
+
+
+
+      </div>  
+  </div>
+
+  <br>
+  <br>
+  <br>
+ 
+
+
+
+
+  
+
+ <%=yield%>
+
+
+
+
+
+    
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
+    <script>$('#readStars').raty({
+        readOnly: true
+      });</script> 
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+  <div class="nav navbar-fixed-bottom navbar-inverse navbar-footer">
+  <div class="container">
+      <ul class="nav navbar-nav text-center">
+          <li class="text-muted"><a href="#"><small>ConcertReview Info</small></a></li>
+            <li class="text-muted"><a href="#"><small>Contact us</small></a></li>
+            <li class="text-muted"><a href="#"><small>Terms and Conditions</small></a></li>
+            <li class="text-muted"><a href="#"><small>Stay Connected</small></a></li>
+        </ul>
+    </div>
+</div>
+<script> src="//ajax.gooleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+</script>
+<script>window.jQuery || document.write('<script src= "../assets/javascripts/jquery.rate.js"><\/script>')</script>
+  
+  <script>
+  $(document).ready(function(){
+    $('carousel').carousel();
+  });
+  </script>
+
+
+</script>
+
+
+</body>
+</html>

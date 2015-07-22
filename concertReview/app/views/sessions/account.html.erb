@@ -1,0 +1,21 @@
+<% if (current_user) %>
+
+	<h1>Account</h1>
+
+	<h2>Your Reviews</h2>
+
+	<% user = User.find(session[:user_id]) %>
+
+	<% if user.reviews.size == 0 %>
+		<p>You haven't reviewed any shows yet, <%= link_to "submit one now?", "reviews/new" %></p>
+	<% end %>
+
+	<% user.reviews.each do |review| %>
+		<p><b><%= link_to "#{review.artist} at #{review.venue} on #{review.date}", review %></b></p>
+	<% end %>
+
+<% else %>
+
+	<h1><%= link_to "Log in", log_in_path %> to see this page</h1>
+
+<% end %>

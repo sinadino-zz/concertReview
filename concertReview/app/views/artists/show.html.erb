@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class = "row">
+
+	<div class = "col-12 col-md-9">
+		<p><strong>Name: </strong><%= @artist.name %></p>
+
+		<p><b>Average Ratings</b></p>
+		<p>Overall: </b><%= @artist.avgOverall %></p>
+		<p>Sound: </b><%= @artist.avgSound %></p>	
+		<p>Song Selection: </b><%= @artist.avgSongSelection %></p>
+		<p>Stage Presence: </b><%= @artist.avgStagePresence %></p>		
+
+		<div style="border:1px solid black; border-radius: 5px";>
+
+			<p><%= "#{@artist.concerts.size} concerts" %></p>
+			<% @artist.concerts.each do |concert| %>
+				<p><%= link_to concert.venue + " on "+ concert.date.to_s, concert %></p>
+			<% end %>
+
+		</div>
+
+	</div>
+
+
+<!--this should be on upper right corner of page probably -->
+
+	<div class = "col-12 col-md-3">
+
+		<p><strong>Upcoming Shows For <%= @artist.name%></strong></p>	
+
+		<% if @artist.upcomingEvents != nil %>
+		<% @artist.upcomingEvents.each do |event| %>
+  			<p><%= link_to event.display_name + " " + event.location.city, event.uri, :target => "_blank"%></p>
+
+		<% end %>
+
+		<% else %>
+			<p>None to display at this time</p>
+		<% end %>
+
+	</div>
+
+</div>
+
+<%= link_to 'Back', artists_path %>

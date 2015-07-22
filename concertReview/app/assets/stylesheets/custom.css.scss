@@ -1,0 +1,176 @@
+@import "bootstrap";
+
+/* universal */
+
+
+
+/* typography */
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #999;
+  font-family: 'Oswald', sans-serif;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.7em;
+  font-family: 'Oswald', sans-serif;
+}
+
+
+body {
+   background-color: #9574B3;
+   font-family: 'Megrim', cursive !important;
+   color:white !important;
+
+}
+.navbar-inverse {
+background-color: black !important;
+border-color: #080808;
+}
+
+.navbar-inverse .navbar-brand  {
+   color: white;
+   font-family: 'Megrim', cursive;
+   font-size: 35px;
+
+ }
+
+.navbar-categories {
+background-color: #666;
+z-index: 95;
+height: 30px;
+}
+
+.navbar-footer{
+  font-size: 17px;
+  color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+color: #FFFFFF;
+}
+
+
+.navbar-inverse {
+background-color: rgba(155, 154, 154, 0.99);
+border-color: #F1EBEB;
+}
+
+
+a {
+color: white;
+text-decoration: none;
+font-family: 'Oswald', sans-serif;
+}
+
+
+
+
+
+body{
+  /* background-color: #F5F5DC; */
+  background-color: #B8B8B8;
+}
+
+.jumbotron{
+  background: url('http://www.mcd.ie/oasis_slane2009/Slane_2009.jpg') no-repeat center center;
+   height: 600px;
+
+
+  h1{
+    color: white;
+
+  }
+}
+
+#upcomingShows{
+  
+  a{
+    color: black;
+  }
+}
+
+
+
+a.list-group-item {
+color: #F1EAEA;
+}
+
+a.list-group-item:hover, a.list-group-item:focus {
+text-decoration: none;
+background-color: coral;
+color: white;
+}
+
+.list-group-item {
+position: relative;
+display: block;
+padding: 10px 15px;
+margin-bottom: -1px;
+background-color: #A7A7A7;
+border: 1px solid #dddddd;
+}
+
+a:hover, a:focus {
+color: coral;
+text-decoration: initial;
+}
+
+list-group-item {
+position: relative;
+display: block;
+padding: 10px 15px;
+margin-bottom: -1px;
+background-color: #A7A7A7;
+border: 3px solid #FAF4F4;
+}
+
+
+.panel {
+margin-bottom: 60px;
+margin-left: 12px;
+margin-right: 12px;
+background-color: #ffffff;
+border: 1px solid transparent;
+border-radius: 4px;
+-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

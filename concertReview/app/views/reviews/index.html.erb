@@ -1,0 +1,165 @@
+<%= javascript_include_tag 'jquery.raty' %>
+
+<html>
+  <head>
+  <link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'> 
+      <%= stylesheet_link_tag "custom", media: "all" %>
+  </head>
+
+
+
+  <body>
+      
+     
+         
+
+
+      <div class="container">
+
+
+
+            <div class="panel panel-default">
+             <div class="panel-body">
+                <h2   align="center" style="font-size: 40px; margin-top: -4px; margin-bottom: -4px; font-family: 'Oswald', sans-serif">  Recent Reviews </h2>
+             </div>
+            </div>
+
+      <!--
+
+ <tr>
+                <% @recentReviews = Review.limit(3).order('id DESC') %>
+                <% @recentReviews.each do |review| %>
+                 
+                      <p><b>Artist:</b> <%= link_to review.concert.artist.name, review.concert.artist %> &nbsp
+                      <b>Venue:</b> <%= review.venue %> &nbsp
+                      <b>Date:</b> <%= review.date %> &nbsp
+                      <b>Overall Rating:</b> <%= review.overallRating %></p>
+                      <p><b>Comments:</b> <%= review.comments %></p>
+
+                       <%= link_to 'Read Full Review', review %> 
+                       <% if (review.concert.reviews.size > 1)%>
+                      <br><%= link_to "Read all #{review.concert.reviews.size} Reviews From This Concert", review.concert %>
+                    <% end %>
+                  <% end %>
+              </tr>
+
+
+
+
+
+     -->
+
+            
+
+                
+            
+
+
+          <div class="col-md-4">
+
+      <div style=" border: 3px solid #FAF4F4;background: lightgrey; height: 500px" class="jumbotron">
+       
+               <h2  style="color: grey;font-size: 30px; font-family: 'Oswald', sans-serif">  What do you say? </h2>
+
+
+          <div style="border: 3px solid #FAF4F4"class="list-group">
+            
+            <a  style="font-size: 18px; font-family: 'Oswald', sans-serif"href="#" class="list-group-item">Check out Artists</a>
+            <a style="font-size: 18px; font-family: 'Oswald', sans-serif"href="#" class="list-group-item">Write your Review!</a>
+            <a style="font-size: 18px; font-family: 'Oswald', sans-serif"href="#" class="list-group-item">Follow Your Band!</a>
+            <a style="font-size: 18px; font-family: 'Oswald', sans-serif"href="#" class="list-group-item">Upcoming Concerts</a>
+          </div>
+              
+        </div>
+    </div>
+
+
+    <div class="col-md-8">
+
+      <div style="border: 3px solid #FAF4F4;background: grey; height: 500px" class="jumbotron">
+
+               <h2  style="color: white;font-size: 30px; font-family: 'Oswald', sans-serif">  Recent Reviews </h2>
+
+                <table style="border: 3px solid #FAF4F4"class = "table">
+                
+                <tr>
+                  <th><%= sortable "artist", "Artist" %></th>
+                  <th><%= sortable "venue", "Venue" %></th>
+                  <th><%= sortable "date", "Date" %></th>
+                  <th><%= sortable "numReviews", "Reviews" %></th>
+                  <th><%= sortable "avgRating", "Average Overall Rating" %></th>
+                  <th>All Reviews & Ratings</th>
+                </tr>
+
+                <% @reviews.each do |review| %>
+
+                <tr>
+                  <td><%= link_to "#{review.artist}", review.artist %></td>
+                  <td><%= "#{review.venue}" %></td>
+                  <td><%= "#{review.date}" %></td>
+                  <td><%= "#{review.overallRating}" %></td>
+                  <td><%= "#{review.overallRating}" %></td>
+                  <td><%= link_to "Read More", review %></td>
+                </tr>
+
+                <% end %>
+
+                </table>
+
+          </div>
+      </div>
+
+     
+
+
+        <div class="row">
+
+          <div style="border: 3px solid #FAF4F4"class="col-md-4">
+            <h1>follow your band</h1>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-default" href="http://getbootstrap.com/examples/jumbotron/#" role="button">View details »</a></p>
+          </div>
+
+          <div style="border-top: 3px solid #FAF4F4;border-bottom: 3px solid #FAF4F4;border-left: 1.5px solid #FAF4F4;border-right: 1.5px solid #FAF4F4" class="col-md-4">
+            <h1>know before you go</h1>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-default" href="http://getbootstrap.com/examples/jumbotron/#" role="button">View details »</a></p>
+         </div>
+          <div style="border: 3px solid #FAF4F4" class="col-md-4">
+            <h1>most reviewed</h1>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p><a class="btn btn-default" href="http://getbootstrap.com/examples/jumbotron/#" role="button">View details »</a></p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+
+            
+             
+      
+      
+
+   
+
+        <script> src="//ajax.gooleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+          </script>
+          <script>window.jQuery || document.write('<script src= "../assets/javascripts/bootstrap.js"><\/script>')</script>
+            
+            <script>
+            $(document).ready(function(){
+              $('carousel').carousel();
+            });
+          </script>
+
+     
+
+
+        
+</body>
+</html>
+
+

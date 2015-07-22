@@ -1,0 +1,175 @@
+
+<div class="container">
+
+
+  <div style="background-color: white" class="container">
+
+
+    <h1 style="font-family: sans-serif;
+color: grey;"> Concert Created </h1>
+
+
+
+
+
+    <div class="row">
+
+
+
+    <div class="col-md-4">
+
+      <div style="color: grey;background: lightgrey; height: 400px" class="jumbotron">
+
+      <table style="border: 3px solid #FAF4F4"class = "table">
+
+
+      <p>
+        <strong>Reviews:</strong>
+
+        <% @concert.reviews.each do |review| %>
+          <div>
+            <b>Overall rating: <%= review.overallRating %></b> &nbsp
+            <b>Comments: <%= review.comments %></b>
+            <b style="color:lightcoral"><%= link_to 'Read More', review %></b>
+          </div>
+        <% end %>
+      </p>
+    </table>
+
+
+   
+
+    </div>
+         
+              
+    </div>
+              
+     
+
+
+    <div class="col-md-8">
+
+      <div style="color: grey; background: lightgrey; height: 400px" class="jumbotron">
+
+
+        <table style="border: 3px solid #FAF4F4"class = "table">
+
+
+        <p style="font-size: 20px !important">
+          <strong>Artist:</strong>
+          <%= link_to @concert.artist.name, @concert.artist %>
+        </p>
+
+        <p>
+          <strong>Venue:</strong>
+          <%= @concert.venue %>
+        </p>
+
+        <p>
+          <strong>Date:</strong>
+          <%= @concert.date %>
+        </p>
+
+        <p>
+          <strong>Average Overall Rating:</strong>
+          <%= @concert.averageOverall %>
+        </p>
+
+
+
+        <p>
+          <strong>Average Song Selection Rating:</strong>
+          <%= @concert.averageSongSelection %>
+        </p>
+
+        <p>
+          <strong>Average Stage Presence Rating:</strong>
+          <%= @concert.averageStagePresence %>
+        </p>
+
+
+        <button style="float: right" type="button" class="btn btn-warning"> <%= link_to 'Back', concerts_path %></button>
+
+      </table>
+
+        
+
+
+      </div>
+
+      <!-- Indicates caution should be taken with this action -->
+
+    </div>
+
+      
+   </div>
+
+
+
+</div>
+
+
+
+<div>
+
+
+
+
+
+
+
+
+
+
+<!--
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= link_to @concert.artist.name, @concert.artist %>
+</p>
+
+<p>
+  <strong>Venue:</strong>
+  <%= @concert.venue %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @concert.date %>
+</p>
+
+<p>
+  <strong>Average Overall Rating:</strong>
+  <%= @concert.averageOverall %>
+</p>
+
+
+
+<p>
+  <strong>Average Song Selection Rating:</strong>
+  <%= @concert.averageSongSelection %>
+</p>
+
+<p>
+  <strong>Average Stage Presence Rating:</strong>
+  <%= @concert.averageStagePresence %>
+</p>
+
+<p>
+	<strong>Reviews:</strong>
+
+	<% @concert.reviews.each do |review| %>
+		<div style="border:1px solid black; border-radius: 5px";>
+			<b>Overall rating: <%= review.overallRating %></b> &nbsp
+			<b>Comments: <%= review.comments %></b>
+			<b><%= link_to 'Read More', review %></b>
+		</div>
+	<% end %>
+</p>
+
+
+
+<%= link_to 'Back', concerts_path %>
+-->

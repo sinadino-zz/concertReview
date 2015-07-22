@@ -1,0 +1,110 @@
+<html>
+
+<body>
+
+
+  <div class="container">
+
+
+    <div class="row">
+
+
+        <div class="col-md-4">
+
+        <div style=" border: 3px solid #FAF4F4;background: lightgrey; height: 500px" class="jumbotron">
+         
+                 <h2  style="color: grey;font-size: 30px; font-family: 'Oswald', sans-serif">  What do you say? </h2>
+
+
+            <div style="border: 3px solid #FAF4F4"class="list-group">
+              
+              <a  style="font-size: 18px; font-family: 'Oswald', sans-serif"href="#" class="list-group-item">Check out Artists</a>
+              <a style="font-size: 18px; font-family: 'Oswald', sans-serif"href="#" class="list-group-item">Write your Review!</a>
+              <a style="font-size: 18px; font-family: 'Oswald', sans-serif"href="#" class="list-group-item">Follow Your Band!</a>
+              <a style="font-size: 18px; font-family: 'Oswald', sans-serif"href="#" class="list-group-item">Upcoming Concerts</a>
+            </div>
+                
+          </div>
+      </div>
+
+    
+
+    
+      <div class="col-md-8">
+
+      <div style="border: 3px solid #FAF4F4;background: grey; height: 500px" class="jumbotron">
+
+               <h2  style="color: white;font-size: 30px; font-family: 'Oswald', sans-serif">  Recent Concerts </h2>
+
+    
+
+         <div id = 'artists'>
+            <% @artists.each do |artist| %>
+                <div style="border:1px solid black; border-radius: 5px";>
+                  <p><b><%= link_to artist.name, artist %></b> 
+                  <% if artist.concerts.size > 1 %>
+                    <%= " #{artist.concerts.size} concerts with " %> 
+                  <% else %> 
+                    <%= " #{artist.concerts.size} concert with " %> 
+                  <% end %>
+
+                  <% if artist.numReviews > 1 %>
+                    <%= "#{artist.numReviews} reviews" %></p>
+                  <% else %>
+                    <%= "#{artist.numReviews} review" %></p>
+                  <% end %>
+
+                  <p>Average Overall Rating: <%= artist.avgOverall %></p>
+
+                </div>
+
+              <% end %>
+         </div>
+      </div>
+    </div>
+
+ 
+
+
+  <!-- end row -->
+</div>
+  <!-- end container -->
+</div>
+
+<%= paginate @artists %>
+
+
+</body>
+</html>
+
+
+
+
+
+<!--
+ <div>
+        <%= form_tag(artists_path, :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Artists" %>
+          <%= submit_tag "Search", :name => nil %>
+        <% end %>
+        <br>
+
+      </div>
+
+
+      <div class = "col-12 col-md-3">
+        <p><b>Sort </b> <%= link_to "Alphabetically", artists_path %></p>
+      </div>
+
+
+      <div class = "col-12 col-md-3">  
+        <p><%= link_to "Average rating", :sort => "avgRating" %></p>
+      </div>
+
+      <div class = "col-12 col-md-4">
+        <p><%= link_to "Number of Concerts  ", :sort => "numConcerts" %> //
+           <%= link_to "Reviews" , :sort => "numReviews" %></p>
+      </div>
+
+
+-->

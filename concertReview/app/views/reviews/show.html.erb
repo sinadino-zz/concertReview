@@ -1,0 +1,102 @@
+<html>
+
+<body>
+
+  <div class="container">
+
+    <div class="panel panel-default">
+       <div class="panel-body">
+          <h2   align="center" style="font-size: 40px; margin-top: -4px; margin-bottom: -4px">  Cheers !!</h2>
+       </div>
+    </div>
+
+    
+    <div class="row">
+
+
+      <p id="notice"><%= notice %></p>
+
+          <div class="col-md-8">
+
+            <div style="background: grey; height: 500px" class="jumbotron">
+
+             <h1 style="font-size:85px"><%= link_to "#{@review.artist} live at #{@review.venue}                                                                          
+
+             ", @review.concert %></h1>
+
+
+
+           </div>
+
+          </div>
+<!--
+<p>
+  on #{@review.date}
+  <strong>Artist:</strong>
+  <%= @review.artist %>
+</p>
+
+<p>
+  <strong>Venue:</strong>
+  <%= @review.venue %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @review.date %>
+</p>
+
+--> 
+
+   <div class="col-md-4">
+
+    <div style="background: grey; height: 500px" class="jumbotron">
+          <p>
+            <strong>Genre:</strong>
+            <%= @review.genre %>
+          </p>
+
+          <p>
+            <strong>Sound:</strong>
+            <%= @review.sound %>
+          </p>
+
+          <p>
+            <strong>Stage Presence:</strong>
+            <%= @review.stagePresence %>
+          </p>
+
+          <p>
+            <strong>Song Selection:</strong>
+            <%= @review.songSelection %>
+          </p>
+
+          <p>
+            <strong>Overall Rating:</strong>
+            <%= @review.overallRating %>
+          </p>
+
+          <p>
+            <strong>Review:</strong>
+            <%= @review.comments %>
+          </p>
+
+          <% if (@review.concert.reviews.size > 1)%>
+            <%= link_to "Read all #{@review.concert.reviews.size} Reviews From This Concert", @review.concert %> <br>
+          <% end %>
+
+          <button type="submit" class="btn btn-primary">
+          <%= link_to 'Back', reviews_path %>
+          </button>
+          
+        </div>
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+</body>
+</html>
